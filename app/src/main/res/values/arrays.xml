@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="clinics_array">
+        <item>Poli Umum</item>
+        <item>Poli Gigi</item>
+    </string-array>
+</resources>
