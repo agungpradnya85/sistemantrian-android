@@ -26,7 +26,7 @@ public class BaseApplication extends AppCompatActivity {
         //If we will get true
         if(loggedIn){
             //We will start the Profile Activity
-            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+            Intent intent = new Intent(getApplicationContext(), dashboard2.class);
             startActivity(intent);
         }
     }

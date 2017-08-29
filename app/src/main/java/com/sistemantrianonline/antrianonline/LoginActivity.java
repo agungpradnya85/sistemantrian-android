@@ -39,15 +39,15 @@ public class LoginActivity extends BaseApplication {
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         final Button bLogin = (Button) findViewById(R.id.bLogin);
-        final TextView registerLink = (TextView) findViewById(R.id.tvRegisterHere);
+       // final TextView registerLink = (TextView) findViewById(R.id.tvRegisterHere);
 
-        registerLink.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                LoginActivity.this.startActivity(registerIntent);
-            }
-        });
+//        registerLink.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+//                LoginActivity.this.startActivity(registerIntent);
+//            }
+//        });
 
         bLogin.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -89,7 +89,7 @@ public class LoginActivity extends BaseApplication {
                                 editor.commit();
 
                                 //Starting profile activity
-                                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, dashboard2.class);
                                 startActivity(intent);
                             }
 

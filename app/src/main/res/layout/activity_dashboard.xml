@@ -7,31 +7,50 @@
     tools:context="com.sistemantrianonline.antrianonline.DashboardActivity"
     android:orientation="vertical">
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrasi"
+            android:textSize="50dp"/>
+
     <TextView
-        android:text="Halaman Dashboard Pasien"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btnReservasi"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reservasi"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:text="Profil"
+        android:textSize="50dp"/>
 
-    <Button
-        android:id="@+id/btnUpdateProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <Button
-        android:id="@+id/btnChangePassword"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
-        tools:layout_editor_absoluteX="269dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textSize="50dp"/>
+
+    <!--<TextView-->
+        <!--android:text="Halaman Dashboard Pasien"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+    <!--<Button-->
+        <!--android:id="@+id/btnReservasi"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Reservasi"-->
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="16dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/btnUpdateProfile"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Profile"-->
+        <!--tools:layout_editor_absoluteX="148dp"-->
+        <!--tools:layout_editor_absoluteY="16dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/btnChangePassword"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Password"-->
+        <!--tools:layout_editor_absoluteX="269dp"-->
+        <!--tools:layout_editor_absoluteY="16dp" />-->
 </LinearLayout>

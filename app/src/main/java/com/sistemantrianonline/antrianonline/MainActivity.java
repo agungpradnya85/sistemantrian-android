@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     // id antrian di database;
     String id_antrian;
+    public static final String MyPREFERENCES = "MyPrefs" ;
     SharedPreferences sharedPreferences;
     TextView result;
     @Override
@@ -40,10 +41,25 @@ public class MainActivity extends AppCompatActivity {
         final int id_user = 1;
         result  = (TextView) findViewById(R.id.tvNoAntrian);
         final Button btnCancel = (Button) findViewById(R.id.btnCancel);
+        final Button bLogout = (Button) findViewById(R.id.bLogout);
 
-        sharedPreferences = getSharedPreferences(UserManager.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+       sharedPreferences = getSharedPreferences(UserManager.SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
+        bLogout.setOnClickListener(new View.OnClickListener(){
 
+            public void onClick(View view){
+                SharedPreferences preferences = getSharedPreferences(UserManager.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.commit();
+
+                Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
+                MainActivity.this.startActivity(logoutIntent);
+
+                finish();
+            }
+
+        });
 
         //Toast.makeText(this, "String "+s, Toast.LENGTH_LONG).show();
 

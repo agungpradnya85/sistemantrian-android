@@ -11,13 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
@@ -29,7 +23,18 @@
             android:label="@string/title_activity_clinic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DashboardActivity" />
-        <activity android:name=".BaseApplication"></activity>
+        <activity android:name=".BaseApplication" />
+        <activity
+            android:name=".dashboard2"
+            android:label="@string/title_activity_dashboard2"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LogoutActivity"></activity>
     </application>
 
 </manifest>
