@@ -1,6 +1,8 @@
 package com.sistemantrianonline.antrianonline;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -94,6 +96,16 @@ public class dashboard2 extends AppCompatActivity
 //
 //        } else if (id == R.id.nav_send) {
 
+        }
+        else if(id == R.id.nav_logout) {
+            SharedPreferences preferences = getSharedPreferences(UserManager.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+            editor.commit();
+
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            dashboard2.this.startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
