@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             String antrianText = jsonObject.getString("no_antrian");
                             result.setText(antrianText.toString());
-                            tvNamaKlinik.setText(jsonObject.getString("nama_klinik").toString());
+                            tvNamaKlinik.setText(jsonObject.getString("id_klinik").toString());
                             tvTimeExam.setText(jsonObject.getString("time_exam").toString());
                             id_antrian = jsonObject.getString("id_antrian");
 
