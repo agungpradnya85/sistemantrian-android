@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     // id antrian di database;
     String id_antrian;
     SharedPreferences sharedPreferences;
-    TextView result;
     String id_klinik;
+    private TextView result, tvNamaKlinik, tvTimeExam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         id_klinik = getIntent().getStringExtra("CLINIC_ID");
         result = (TextView) findViewById(R.id.tvNoAntrian);
+        tvNamaKlinik = (TextView) findViewById(R.id.tvNamaKlinik);
+        tvTimeExam = (TextView) findViewById(R.id.tvTimeExam);
         final Button btnCancel = (Button) findViewById(R.id.btnCancel);
 
         sharedPreferences = getSharedPreferences(UserManager.SHARED_PREF_NAME, Context.MODE_PRIVATE);
@@ -61,8 +63,10 @@ public class MainActivity extends AppCompatActivity {
                                         }
 
                                         Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, dashboard2.class);
                                         MainActivity.this.startActivity(intent);
+                                        finish();
+
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -91,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * fetch queue from remote database (json file)
+         */
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/advanced/api/web/index.php/v1/reservations/create?"
                 + UserManager.KEY_TOKEN + "=" + sharedPreferences.getString(UserManager.KEY_TOKEN, ""),
                 new Response.Listener<String>() {
@@ -101,8 +108,10 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             String antrianText = jsonObject.getString("no_antrian");
                             result.setText(antrianText.toString());
-                            Toast.makeText(MainActivity.this, jsonObject.getString("no_antrian"), Toast.LENGTH_LONG).show();
+                            tvNamaKlinik.setText(jsonObject.getString("nama_klinik").toString());
+                            tvTimeExam.setText(jsonObject.getString("time_exam").toString());
                             id_antrian = jsonObject.getString("id_antrian");
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
